@@ -1,21 +1,52 @@
-import React from 'react';
-import puppyData from '../data/puppyData';
-import './Puppies.css';
+/* Puppies.css */
 
-const Puppies = () => {
-  return (
-    <div className="puppies-container">
-      <h2>Available Puppies</h2>
-      {puppyData.map((puppy) => (
-        <div key={puppy.id} className="puppy-card">
-          <img src={puppy.images[0]} alt={puppy.name} />
-          <h3>{puppy.name}</h3>
-          <p>Breed: {puppy.breed}</p>
-          <p>Age: {puppy.age}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
+.puppies-container {
+  max-width: 1200px; /* Adjust to your preference */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-export default Puppies;
+.puppies-container h2 {
+  color: #5C3D2E;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.puppy-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.puppy-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.puppy-card h3 {
+  color: #5C3D2E;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.puppy-card p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .puppies-container {
+    padding: 15px;
+  }
+
+  .puppy-card {
+    margin-bottom: 15px;
+  }
+}

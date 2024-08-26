@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Home.css';
 
 const Home = () => {
-  const backgroundImage = window.innerWidth <= 768 ? '/images/background-mobile.jpg' : '/images/background-desktop.jpg';
+  const [backgroundImage, setBackgroundImage] = useState(window.innerWidth <= 768 ? '/images/background-mobile.jpg' : '/images/background-desktop.jpg');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setBackgroundImage(window.innerWidth <= 768 ? '/images/background-mobile.jpg' : '/images/background-desktop.jpg');
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div

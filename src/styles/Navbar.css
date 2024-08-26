@@ -1,85 +1,89 @@
-/* Base styles */
+/* Basic Navbar Styling */
 .navbar {
-  width: 100%;
-  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-}
-
-.navbar-container {
-  display: flex;
-  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Or any other color */
+  color: white;
+  position: relative; /* Default positioning, avoid absolute or fixed */
   width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for visual separation */
 }
 
-.logo {
-  width: 80px;
-  height: auto;
+.navbar-brand img {
+  height: 40px;
 }
 
-.menu-icon {
-  display: none;
+.navbar-hamburger {
   cursor: pointer;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 24px;
   width: 30px;
-  height: 20px;
+  margin-right: 50px; /* Move the hamburger slightly to the left */
+  z-index: 1001; /* Ensure the hamburger icon is above other elements */
 }
 
-.menu-icon div {
-  background-color: #333;
+.navbar-hamburger span {
+  display: block;
   height: 3px;
   width: 100%;
-}
-
-.menu-icon.open div:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-icon.open div:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.menu-icon.open div:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  background-color: #333;
 }
 
 .navbar-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  padding-top: 60px;
+  z-index: 999; /* Ensure the menu is above other elements */
+}
+
+.navbar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-menu li {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .navbar-menu a {
-  color: #333;
   text-decoration: none;
-  font-weight: bold;
+  color: #333;
+  font-size: 18px;
 }
 
-.navbar-menu a:hover {
-  color: #666;
-}
-
-.navbar-menu.open {
-  display: block;
-  position: absolute;
-  top: 60px;
+.overlay {
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 998; /* Ensure the overlay is below the menu but above the content */
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: flex;
-  }
+/* Active state */
+.navbar-hamburger.active ~ .navbar-menu {
+  right: 0;
+}
 
-  .navbar-menu {
-    display: none;
-    flex-direction: column;
-  }
+.navbar-hamburger.active ~ .overlay {
+  opacity: 1;
+  visibility: visible;
 }

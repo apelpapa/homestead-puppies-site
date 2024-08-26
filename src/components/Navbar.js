@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Navbar.css'; // Assuming your CSS file is here
+import '../styles/Navbar.css';  // Make sure you have a separate CSS file for styles
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <header className="navbar">
-      <div className="navbar-container">
-        <img src="/images/logo.png" alt="Homestead Puppies" className="logo" />
-        <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <nav className={`navbar-menu ${isOpen ? 'open' : ''}`}>
-          <Link to="/home" onClick={toggleMenu}>Home</Link>
-          <Link to="/about-us" onClick={toggleMenu}>About Us</Link>
-          <Link to="/available-puppies" onClick={toggleMenu}>Available Puppies</Link>
-          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
-        </nav>
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <img src="/images/logo.png" alt="Homestead Puppies Logo" />
       </div>
-    </header>
+      <div className={`navbar-hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/available-puppies">Available Puppies</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div className={`overlay ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
+    </nav>
   );
-};
+}
 
 export default Navbar;
