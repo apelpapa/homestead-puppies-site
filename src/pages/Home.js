@@ -1,12 +1,15 @@
 import React from 'react';
-import '../styles/Home.css'; // Ensure you have a CSS file for styling
+import '../styles/Home.css';
 
 const Home = () => {
+  const backgroundImage = window.innerWidth <= 768 ? '/images/background-mobile.jpg' : '/images/background-desktop.jpg';
+
   return (
-    <div className="home-container">
-      <div className="image-container">
-        <img src="/images/background.jpg" alt="Main Banner" className="banner-image" />
-      </div>
+    <div
+      className="home-container"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="mobile-overlay"></div> {/* Overlay for mobile */}
       <div className="welcome-text">
         <h1>Welcome to Homestead Puppies</h1>
         <p>We breed happy, healthy puppies to find their forever homes.</p>

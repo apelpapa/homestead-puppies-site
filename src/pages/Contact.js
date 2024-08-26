@@ -1,42 +1,30 @@
 import React from 'react';
-import { Container, TextField, Button, Typography, Box } from '@mui/material';
+import '../styles/Contact.css';
 
 const Contact = () => {
   return (
-    <Container>
-      <Typography variant="h2" gutterBottom>
-        Contact Us
-      </Typography>
-      <Box component="form">
-        <TextField
-          label="Name"
-          variant="outlined"
-          fullWidth
-          required
-          margin="normal"
-        />
-        <TextField
-          label="Email"
-          variant="outlined"
-          fullWidth
-          required
-          margin="normal"
-          type="email"
-        />
-        <TextField
-          label="Message"
-          variant="outlined"
-          fullWidth
-          required
-          margin="normal"
-          multiline
-          rows={4}
-        />
-        <Button variant="contained" color="primary" type="submit">
-          Send
-        </Button>
-      </Box>
-    </Container>
+    <div className="contact-container">
+      <h2>Contact Us</h2>
+      <p>If you are interested in one of our puppies or have any questions, please reach out to us:</p>
+      <form action="https://formspree.io/f/xyzgkwrd" method="POST">
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        
+        <label htmlFor="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" />
+        
+        <label htmlFor="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <input type="submit" value="Submit" />
+      </form>
+      <p>Email: contact@homestead-puppies.com</p>
+      <p>Phone: 720-833-8083</p>
+      <p>Location: Parker, CO</p>
+    </div>
   );
 };
 

@@ -9,12 +9,19 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
+  position: relative;
+}
+
+.mobile-overlay {
+  display: none; /* Default hidden */
 }
 
 .welcome-text {
-  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
   color: white;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .view-puppies-button {
@@ -26,13 +33,13 @@
   cursor: pointer;
   font-size: 1rem;
   margin-top: 1rem;
+  z-index: 2;
 }
 
 .view-puppies-button:hover {
   background-color: #0056b3;
 }
 
-/* Mobile-Friendly Adjustments */
 @media (max-width: 768px) {
   .home-container {
     background-size: contain;
@@ -47,5 +54,16 @@
     width: 80%;
     max-width: 300px;
     font-size: 1rem;
+  }
+
+  .mobile-overlay {
+    display: block; /* Show overlay on mobile */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1); /* Black overlay with 50% opacity */
+    z-index: 1;
   }
 }
