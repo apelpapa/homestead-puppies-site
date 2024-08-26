@@ -1,30 +1,85 @@
+/* Base styles */
 .navbar {
-  background-color: #f7f7f7; /* Light gray background */
-  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 20px;
 }
 
-.logo img {
-  max-height: 50px; /* Adjust the size of the logo */
-}
-
-.nav-links {
+.navbar-container {
   display: flex;
-  gap: 2rem; /* Space out the links */
-  margin-left: auto; /* Align the links to the right */
+  align-items: center;
+  width: 100%;
 }
 
-.nav-links a {
-  text-decoration: none;
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.menu-icon div {
+  background-color: #333;
+  height: 3px;
+  width: 100%;
+}
+
+.menu-icon.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.open div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu a {
   color: #333;
-  font-size: 1rem;
-  font-weight: 600; /* Slightly bolder text */
-  font-family: 'Arial', sans-serif; /* Use a clean, bold font */
-  transition: color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.nav-links a:hover {
-  color: #000; /* Darker color on hover */
+.navbar-menu a:hover {
+  color: #666;
+}
+
+.navbar-menu.open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+  }
 }
