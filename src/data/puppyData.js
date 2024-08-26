@@ -12,22 +12,28 @@ const puppyData = [
   {
     id: 1,
     name: 'Alex',
-    breed: 'Golden Retriever',
-    age: '8 weeks',
+    breed: 'Cavalier King Charles Spaniel',
+	gender: 'Male',
+    dob: '07/06/2024',
+	takehome: '08/31/2024',
     images: getPuppyImages('Alex')
   },
   {
     id: 2,
     name: 'Chloe',
     breed: 'Cavalier King Charles Spaniel',
-    age: '10 weeks',
+	gender: 'Female',
+    dob: '07/06/2024',
+	takehome: '08/31/2024',
     images: getPuppyImages('Chloe')
   },
   {
     id: 3,
     name: 'Lily',
-    breed: 'Shih Tzu',
-    age: '9 weeks',
+    breed: 'Cavalier King Charles Spaniel',
+	gender: 'Female',
+    dob: '07/06/2024',
+	takehome: '08/31/2024',
     images: getPuppyImages('Lily')
   },
   // Add more puppies here
