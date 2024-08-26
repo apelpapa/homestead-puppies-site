@@ -22,6 +22,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .puppy-card img {
@@ -49,4 +50,43 @@
   .puppy-card {
     margin-bottom: 15px;
   }
+}
+
+/* Lightbox specific styles */
+.puppy-card .lightbox-container {
+  position: relative;
+  overflow: hidden; /* Ensure that overflow is hidden */
+}
+
+.puppy-card .lightbox-container img {
+  width: 100%; /* Adjust width as needed */
+  height: auto;
+  display: block;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+/* Optional: Ensure the lightbox image does not exceed viewport */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
 }
