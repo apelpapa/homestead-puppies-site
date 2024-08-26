@@ -14,29 +14,51 @@ const puppyData = [
     name: 'Alex',
     breed: 'Cavalier King Charles Spaniel',
 	gender: 'Male',
-    dob: '07/06/2024',
-	takehome: '08/31/2024',
-    images: getPuppyImages('Alex')
+    dob: '2024-07-06',
+    images: getPuppyImages('Alex'),
+	father: 'Charles',
+	mother: 'Victoria'
   },
   {
     id: 2,
     name: 'Chloe',
     breed: 'Cavalier King Charles Spaniel',
 	gender: 'Female',
-    dob: '07/06/2024',
-	takehome: '08/31/2024',
-    images: getPuppyImages('Chloe')
+    dob: '2024-07-06',
+    images: getPuppyImages('Chloe'),
+	father: 'Charles',
+	mother: 'Victoria'
   },
   {
     id: 3,
     name: 'Lily',
     breed: 'Cavalier King Charles Spaniel',
 	gender: 'Female',
-    dob: '07/06/2024',
-	takehome: '08/31/2024',
-    images: getPuppyImages('Lily')
+    dob: '2024-07-06',
+    images: getPuppyImages('Lily'),
+	father: 'Charles',
+	mother: 'Victoria'
   },
-  // Add more puppies here
+  {
+    id: 4,
+    name: 'Sophia',
+    breed: 'Cavalier King Charles Spaniel',
+	gender: 'Female',
+    dob: '2024-07-06',
+    images: getPuppyImages('Sophia'),
+	father: 'Charles',
+	mother: 'Victoria'
+  },
+  {
+    id: 3,
+    name: 'Theo',
+    breed: 'Cavalier King Charles Spaniel',
+	gender: 'Male',
+    dob: '2024-07-06',
+    images: getPuppyImages('Theo'),
+	father: 'Charles',
+	mother: 'Victoria'
+  },
 ];
 
 export default puppyData;

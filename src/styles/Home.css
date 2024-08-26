@@ -25,19 +25,27 @@
 }
 
 .view-puppies-button {
-  background-color: #007BFF;
-  color: white;
+  background-color: #f4a261; /* Soft pastel orange color */
+  color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px; /* More rounded corners for a softer look */
   cursor: pointer;
   font-size: 1rem;
   margin-top: 1rem;
   z-index: 2;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
 
 .view-puppies-button:hover {
-  background-color: #0056b3;
+  background-color: #e76f51; /* Slightly darker shade on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.view-puppies-button:active {
+  background-color: #e76f51;
+  transform: translateY(0); /* Reset on click */
 }
 
 @media (max-width: 768px) {
@@ -63,7 +71,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.1); /* Black overlay with 50% opacity */
+    background-color: rgba(0, 0, 0, 0.1); /* Black overlay with 10% opacity */
     z-index: 1;
   }
 }
