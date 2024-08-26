@@ -1,0 +1,38 @@
+/* src/styles/global.css */
+
+/* Existing styles... */
+
+.navbar {
+  background-color: #FFFFFF; /* White */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px; /* Further increase the navbar height for a bigger logo */
+}
+
+.navbar-logo {
+  height: 90px; /* Increase the logo size */
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.navbar-links a {
+  margin-left: 30px;
+  color: #333333; /* Dark Gray */
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Update to a modern font */
+  font-size: 18px; /* Adjust font size */
+  text-decoration: none; /* Remove underline */
+  text-align: center;
+}
+
+.navbar-links a:hover {
+  color: #FF6D00; /* Bright Orange */
+  text-decoration: none; /* Ensure underline doesn't appear on hover */
+}
