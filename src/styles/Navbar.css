@@ -1,19 +1,30 @@
 .navbar {
-  background-color: #f7f7f7; /* Adjust based on the color scheme */
-  padding: 1rem;
+  background-color: #f7f7f7; /* Light gray background */
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar a {
+.logo img {
+  max-height: 50px; /* Adjust the size of the logo */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem; /* Space out the links */
+  margin-left: auto; /* Align the links to the right */
+}
+
+.nav-links a {
   text-decoration: none;
   color: #333;
-  padding: 0.5rem 1rem;
   font-size: 1rem;
+  font-weight: 600; /* Slightly bolder text */
+  font-family: 'Arial', sans-serif; /* Use a clean, bold font */
   transition: color 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #555;
+.nav-links a:hover {
+  color: #000; /* Darker color on hover */
 }
